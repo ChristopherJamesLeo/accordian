@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>accordian</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{
+            background-color: #f4f4f4;
+            padding: 0;
+        }
+        .accordian-content-container{
+            width: 100%;
+        }
+        .accordian-title{
+            width: 100%;
+            
+        }
+        .acc-title{
+            font-size: 25px;
+            background-color: #fff;
+            padding: 20px 10px;
+            user-select: none;
+            position: relative;
+            transition: all 0.3s ease 0s;
+        }
+        .acc-title.active {
+            background-color: steelblue;
+            color: #fff;
+        }
+        .acc-title::after {
+            content: "\f067";
+            font-family: "Font Awesome 5 Free";
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .acc-title.active::after{
+            content: "\f068";
+        }
+        .accordian-title i {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .accordian-content{
+            background-color: rgba(214, 213, 213, 0.815);
+            height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease 0s;
+        }
+        .accordian-content p{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="accordian-container">
+        <div class="accordian-content-container">
+            <div class="accordian-title">
+                <h1 class="acc-title active"><i class="fas fa-hand-point-right"></i>Content-1</h1>
+                <div class="accordian-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis non cumque quibusdam voluptatibus harum fuga provident. Cupiditate debitis illum laudantium nesciunt minima? Nemo nostrum earum voluptas iusto quod exercitationem placeat?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda similique, fuga veritatis accusamus praesentium, porro facilis dolor voluptatum, unde animi qui hic corporis dolore fugiat rem? Necessitatibus deleniti ullam tempora.</p>
+                </div>
+            </div>
+            <div class="accordian-title">
+                <h1 class="acc-title"><i class="fas fa-hand-point-right"></i>Content-2</h1>
+                <div class="accordian-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis non cumque quibusdam voluptatibus harum fuga provident. Cupiditate debitis illum laudantium nesciunt minima? Nemo nostrum earum voluptas iusto quod exercitationem placeat?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda similique, fuga veritatis accusamus praesentium, porro facilis dolor voluptatum, unde animi qui hic corporis dolore fugiat rem? Necessitatibus deleniti ullam tempora.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis non cumque quibusdam voluptatibus harum fuga provident. Cupiditate debitis illum laudantium nesciunt minima? Nemo nostrum earum voluptas iusto quod exercitationem placeat?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda similique, fuga veritatis accusamus praesentium, porro facilis dolor voluptatum, unde animi qui hic corporis dolore fugiat rem? Necessitatibus deleniti ullam tempora.</p>
+                </div>
+            </div>
+            <div class="accordian-title">
+                <h1 class="acc-title"><i class="fas fa-hand-point-right"></i>Content-3</h1>
+                <div class="accordian-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis non cumque quibusdam voluptatibus harum fuga provident. Cupiditate debitis illum laudantium nesciunt minima? Nemo nostrum earum voluptas iusto quod exercitationem placeat?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda similique, fuga veritatis accusamus praesentium, porro facilis dolor voluptatum, unde animi qui hic corporis dolore fugiat rem? Necessitatibus deleniti ullam tempora.</p>
+                </div>
+            </div>
+            <div class="accordian-title">
+                <h1 class="acc-title"><i class="fas fa-hand-point-right"></i>Content-4</h1>
+                <div class="accordian-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis non cumque quibusdam voluptatibus harum fuga provident. Cupiditate debitis illum laudantium nesciunt minima? Nemo nostrum earum voluptas iusto quod exercitationem placeat?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda similique, fuga veritatis accusamus praesentium, porro facilis dolor voluptatum, unde animi qui hic corporis dolore fugiat rem? Necessitatibus deleniti ullam tempora.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        console.log("hello world");
+        let acctitlelists = document.querySelectorAll(".acc-title");
+        console.log(acctitlelists)
+        let accontentlists = document.querySelectorAll(".accordian-content");
+        
+        // for(var i = 0 ; i < acctitlelists.length ; i++){
+        //     acctitlelists[i].addEventListener("click", function(e){
+        //         // console.log(this)
+        //         this.classList.toggle("active");
+        //         let getacccontent = this.nextElementSibling;
+        //         console.log(getacccontent);
+        //         console.log(getacccontent.scrollHeight)
+        //         // getacccontent.style.height = getacccontent.scrollHeight + "px";
+        //         if(getacccontent.style.height){
+        //             getacccontent.style.height =  null;
+        //         }else {
+        //             getacccontent.style.height = getacccontent.scrollHeight + "px";
+        //         }
+        //     })
+        //     if(acctitlelists[i].classList.contains("active")){
+        //         accontentlists[i].style.height = accontentlists[i].scrollHeight + "px";
+        //     }
+        // }
+
+        acctitlelists.forEach(function(acctitlelist,idx){
+            acctitlelist.addEventListener("click", function (e) {
+                // console.log(e.target);
+                let accTarget = e.target;
+                accTarget.classList.toggle("active");
+                let getaccontentTarget = accTarget.nextElementSibling;
+                // console.log(getaccontentTarget);
+                // getaccontentTarget.style.height = getaccontentTarget.scrollHeight + "px";
+                if(getaccontentTarget.style.height){
+                    getaccontentTarget.style.height = null;
+                } else {
+                    getaccontentTarget.style.height = getaccontentTarget.scrollHeight + "px";
+                }
+            })
+            if(acctitlelist.classList.contains("active")){
+                accontentlists[idx].style.height = accontentlists[idx].scrollHeight + "px";
+            }
+        })
+
+        
+    </script>
+</body>
+</html>
